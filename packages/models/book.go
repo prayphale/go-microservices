@@ -20,10 +20,10 @@ func init() {
 	db.AutoMigrate(&Book{})
 }
 
-func (b *Book) CrateBook() *Book {
+func (b *Book) CreateBook() *Book {
 	db.NewRecord(b)
 	db.Create(&b)
-	return b.CrateBook()
+	return b
 }
 
 func GetAllBooks() []Book {
